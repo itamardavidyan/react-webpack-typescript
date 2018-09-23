@@ -1,9 +1,5 @@
-import * as React from 'react';
-import { render } from 'react-dom';
-import App from './components/App';
+import * as React from "react";
+import { render } from "react-dom";
+import App from "./components/App/App";
 
-
-render(
-    <App message="World" />,
-    document.getElementById('root'),
-);
+render(<App />, document.getElementById("root"));

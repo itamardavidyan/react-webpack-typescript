@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -16,7 +17,16 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         loader: "awesome-typescript-loader"
         // exclude: [path.resolve(__dirname, "node_modules")]
+      },
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "public", "index.html")
+    })
+  ]
 };
